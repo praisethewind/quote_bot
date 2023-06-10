@@ -1,0 +1,1 @@
+screen -X -S quote_bot kill
