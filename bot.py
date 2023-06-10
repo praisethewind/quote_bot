@@ -47,7 +47,7 @@ quotes = json.load(quotes_file)
 quotes_file.close()
 
 def get_rand_quote():
-    return quotes_emoji[randint(0, len(quotes_emoji))] + " " + quotes[randint(0, len(quotes))]
+    return quotes_emoji[randint(0, len(quotes_emoji) - 1)] + " " + quotes[randint(0, len(quotes) - 1)]
 
 def send_message(user_id, reply_index):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
