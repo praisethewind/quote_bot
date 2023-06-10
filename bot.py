@@ -5,6 +5,8 @@ import json
 
 bot = telebot.TeleBot('6020189587:AAFoNYpOMjWqjhcS9AL9VsWoH3rXhUzBfXY')
 
+greeting = '👋 Привет, этот бот может поддержать тебя мотивационной цитатой.\nЖми скорее кнопку, чего же ты ждешь!?'
+
 replies = [
     '🔥 Показать мотивационную цитату',
     '😉 Еще',
@@ -58,7 +60,7 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn = types.KeyboardButton(replies[0])
     markup.add(btn)
-    bot.send_message(message.from_user.id, "👋 Привет, этот бот может поддержать тебя мотивационной цитатой", reply_markup=markup)
+    bot.send_message(message.from_user.id, greeting, reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
